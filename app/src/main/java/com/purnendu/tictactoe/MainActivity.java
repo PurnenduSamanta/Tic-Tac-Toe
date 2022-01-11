@@ -2,22 +2,25 @@ package com.purnendu.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+class MainActivityJava extends AppCompatActivity implements View.OnClickListener {
 
 
-    MaterialButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,reset;
-    TextView  playerTurn;
-    MaterialButton[][]board;
-    int[][]boardStatus;
-    int count=0,turnCount=0;
-    boolean player=true;
-    View vm,ht,hb,vr,vl;
+    MaterialButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, reset;
+    TextView playerTurn;
+    MaterialButton[][] board;
+    int[][] boardStatus;
+    int count = 0, turnCount = 0;
+    boolean player = true;
+    View vm, ht, hb, vr, vl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,17 +30,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setFindViewById();
 
-        board=new MaterialButton[3][3];
-        boardStatus=new int[3][3];
+        board = new MaterialButton[3][3];
+        boardStatus = new int[3][3];
 
         initializeBoard();
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                turnCount=0;
-                count=0;
-                player=true;
+                turnCount = 0;
+                count = 0;
+                player = true;
                 playerTurn.setText("Player 1 turn");
                 initializeBoard();
                 vm.setVisibility(View.INVISIBLE);
@@ -50,52 +53,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
-
-
     }
+
     private void setFindViewById() {
 
 
-        playerTurn=findViewById(R.id.playerTurn);
-        btn1=findViewById(R.id.btn1);
-        btn2=findViewById(R.id.btn2);
-        btn3=findViewById(R.id.btn3);
-        btn4=findViewById(R.id.btn4);
-        btn5=findViewById(R.id.btn5);
-        btn6=findViewById(R.id.btn6);
-        btn7=findViewById(R.id.btn7);
-        btn8=findViewById(R.id.btn8);
-        btn9=findViewById(R.id.btn9);
-        reset=findViewById(R.id.reset);
-        vm=findViewById(R.id.vm);
-        ht=findViewById(R.id.ht);
-        hb=findViewById(R.id.hb);
-        vr=findViewById(R.id.vr);
-        vl=findViewById(R.id.vl);
+        playerTurn = findViewById(R.id.playerTurn);
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
+        btn5 = findViewById(R.id.btn5);
+        btn6 = findViewById(R.id.btn6);
+        btn7 = findViewById(R.id.btn7);
+        btn8 = findViewById(R.id.btn8);
+        btn9 = findViewById(R.id.btn9);
+        reset = findViewById(R.id.reset);
+        vm = findViewById(R.id.vm);
+        ht = findViewById(R.id.ht);
+        hb = findViewById(R.id.hb);
+        vr = findViewById(R.id.vr);
+        vl = findViewById(R.id.vl);
 
     }
 
-    private MaterialButton getButton(int btnNo)
-    {
-        switch (btnNo)
-        {
-            case(1):
+    private MaterialButton getButton(int btnNo) {
+        switch (btnNo) {
+            case (1):
                 return btn1;
-            case(2):
+            case (2):
                 return btn2;
-            case(3):
+            case (3):
                 return btn3;
-            case(4):
+            case (4):
                 return btn4;
-            case(5):
+            case (5):
                 return btn5;
-            case(6):
+            case (6):
                 return btn6;
-            case(7):
+            case (7):
                 return btn7;
-            case(8):
+            case (8):
                 return btn8;
-            case(9):
+            case (9):
                 return btn9;
 
         }
@@ -105,62 +105,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        switch (v.getId())
-        {
-            case(R.id.btn1):
-            {
-                updateValue(0,0,player);
+        switch (v.getId()) {
+            case (R.id.btn1): {
+                updateValue(0, 0, player);
                 break;
             }
-            case(R.id.btn2):
-            {
-                updateValue(0,1,player);
+            case (R.id.btn2): {
+                updateValue(0, 1, player);
                 break;
             }
-            case(R.id.btn3):
-            {
-                updateValue(0,2,player);
+            case (R.id.btn3): {
+                updateValue(0, 2, player);
                 break;
             }
-            case(R.id.btn4):
-            {
-                updateValue(1,0,player);
+            case (R.id.btn4): {
+                updateValue(1, 0, player);
                 break;
             }
-            case(R.id.btn5):
-            {
-                updateValue(1,1,player);
+            case (R.id.btn5): {
+                updateValue(1, 1, player);
                 break;
             }
-            case(R.id.btn6):
-            {
-                updateValue(1,2,player);
+            case (R.id.btn6): {
+                updateValue(1, 2, player);
                 break;
             }
-            case(R.id.btn7):
-            {
-                updateValue(2,0,player);
+            case (R.id.btn7): {
+                updateValue(2, 0, player);
                 break;
             }
-            case(R.id.btn8):
-            {
-                updateValue(2,1,player);
+            case (R.id.btn8): {
+                updateValue(2, 1, player);
                 break;
             }
-            case(R.id.btn9):
-            {
-                updateValue(2,2,player);
+            case (R.id.btn9): {
+                updateValue(2, 2, player);
                 break;
             }
         }
         turnCount++;
-        player=!player;
-        if(player)
+        player = !player;
+        if (player)
             playerTurn.setText("Player X turn");
         else
             playerTurn.setText("Player 0 turn");
 
-        if(turnCount==9)
+        if (turnCount == 9)
             playerTurn.setText("Game Draw");
 
         checkWinner();
@@ -170,17 +160,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initializeBoard() {
 
-        for(int i=0;i<3;i++)
-        {
-            for(int j=0;j<3;j++)
-            {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 count++;
-                MaterialButton btn=getButton(count);
-                if(btn!=null)
-                {
-                    board[i][j]=btn;
+                MaterialButton btn = getButton(count);
+                if (btn != null) {
+                    board[i][j] = btn;
                     board[i][j].setOnClickListener(this);
-                    boardStatus[i][j]=-1;
+                    boardStatus[i][j] = -1;
                     board[i][j].setEnabled(true);
                     board[i][j].setText("");
                 }
@@ -189,34 +176,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void updateValue(int row,int column,boolean player)
-    {
-        String temp=player?"X":"0";
-        int tempInt=player?1:0;
+    private void updateValue(int row, int column, boolean player) {
+        String temp = player ? "X" : "0";
+        int tempInt = player ? 1 : 0;
         board[row][column].setText(temp);
-        boardStatus[row][column]=tempInt;
+        boardStatus[row][column] = tempInt;
         board[row][column].setEnabled(false);
     }
 
     private void checkWinner() {
 
-        String line="";
+        String line = "";
 
         //Horizontally Check
-        for(int i=0;i<3;i++)
-        {
-            if((boardStatus[i][0]==boardStatus[i][1])  && (boardStatus[i][0]==boardStatus[i][2]))
-            {
-                if(boardStatus[i][0]==1)
-                {
+        for (int i = 0; i < 3; i++) {
+            if ((boardStatus[i][0] == boardStatus[i][1]) && (boardStatus[i][0] == boardStatus[i][2])) {
+                if (boardStatus[i][0] == 1) {
                     playerTurn.setText("Player 1 win");
-                    line="row"+":"+i;
+                    line = "row" + ":" + i;
                     break;
-                }
-                else if(boardStatus[i][0]==0)
-                {
+                } else if (boardStatus[i][0] == 0) {
                     playerTurn.setText("Player 2 win");
-                    line="row"+":"+i;
+                    line = "row" + ":" + i;
                     break;
                 }
 
@@ -224,55 +205,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //Vertically Check
-        for(int i=0;i<3;i++)
-        {
-            if((boardStatus[0][i]==boardStatus[1][i])  && (boardStatus[0][i]==boardStatus[2][i]))
-            {
-                if(boardStatus[0][i]==1)
-                {
+        for (int i = 0; i < 3; i++) {
+            if ((boardStatus[0][i] == boardStatus[1][i]) && (boardStatus[0][i] == boardStatus[2][i])) {
+                if (boardStatus[0][i] == 1) {
                     playerTurn.setText("Player 1 win");
-                    line="column"+":"+i;
+                    line = "column" + ":" + i;
                     break;
-                }
-                else if(boardStatus[0][i]==0)
-                {
+                } else if (boardStatus[0][i] == 0) {
                     playerTurn.setText("Player 2 win");
-                    line="column"+":"+i;
+                    line = "column" + ":" + i;
                     break;
                 }
             }
         }
 
         //Diagonally Check
-        if((boardStatus[0][0]==boardStatus[1][1]) && (boardStatus[0][0]==boardStatus[2][2]))
-        {
-            if(boardStatus[0][0]==1)
-            {
-                line="corner:l";
+        if ((boardStatus[0][0] == boardStatus[1][1]) && (boardStatus[0][0] == boardStatus[2][2])) {
+            if (boardStatus[0][0] == 1) {
+                line = "corner:l";
                 playerTurn.setText("Player 1 win");
-            }
-
-            else if(boardStatus[0][0]==0)
-            {
-                line="corner:l";
+            } else if (boardStatus[0][0] == 0) {
+                line = "corner:l";
                 playerTurn.setText("Player 2 win");
             }
 
 
         }
 
-        if((boardStatus[0][2]==boardStatus[1][1]) && (boardStatus[0][2]==boardStatus[2][0]))
-        {
-            if(boardStatus[0][2]==1)
-            {
+        if ((boardStatus[0][2] == boardStatus[1][1]) && (boardStatus[0][2] == boardStatus[2][0])) {
+            if (boardStatus[0][2] == 1) {
                 playerTurn.setText("Player 1 win");
-                line="corner:r";
-            }
-
-            else if(boardStatus[0][2]==0)
-            {
+                line = "corner:r";
+            } else if (boardStatus[0][2] == 0) {
                 playerTurn.setText("Player 2 win");
-                line="corner:r";
+                line = "corner:r";
             }
         }
         lineDraw(line);
@@ -280,8 +246,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void lineDraw(String line) {
-        if(!line.isEmpty())
-        {
+        if (!line.isEmpty()) {
             switch (line) {
                 case "row:0":
                     ht.setVisibility(View.VISIBLE);
@@ -336,12 +301,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void disableButton() {
 
-        if(playerTurn.getText().toString().contains("win"))
-        {
-            for(int i=0;i<3;i++)
-            {
-                for(int j=0;j<3;j++)
-                {
+        if (playerTurn.getText().toString().contains("win")) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
                     board[i][j].setEnabled(false);
                 }
             }
@@ -350,8 +312,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setMiddleVerticalLineToDefaultState() {
         vm.setRotation(0);
-        int buttonWidth=btn2.getHeight();
-        int height=(buttonWidth*3);
+        int buttonWidth = btn2.getHeight();
+        int height = (buttonWidth * 3);
         vm.getLayoutParams().height = height;
     }
 

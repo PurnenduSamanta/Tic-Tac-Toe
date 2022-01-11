@@ -1,107 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/vm"
-        android:layout_height="match_parent"
-        android:background="@android:color/black"
-        android:layout_width="5dp"
-        android:layout_marginVertical="100dp"
-        android:layout_centerInParent="true"
-        android:visibility="invisible"
-        />
-
-    <View
-        android:id="@+id/vr"
-        android:layout_height="match_parent"
-        android:background="@android:color/black"
-        android:layout_width="5dp"
-        android:layout_marginVertical="100dp"
-        android:visibility="invisible"
-        />
-
-    <View
-        android:id="@+id/vl"
-        android:layout_height="match_parent"
-        android:background="@android:color/black"
-        android:layout_width="5dp"
-        android:layout_marginVertical="100dp"
-        android:layout_alignParentEnd="true"
-       android:visibility="invisible"
-        />
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/playerTurn"
-        android:textColor="@color/black"
-        android:layout_marginBottom="20dp"
-        android:textSize="30sp"
-        android:layout_gravity="center"
-        android:text="Player 1 turn"/>
-
-
-
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="5dp">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <View
+            android:id="@+id/vm"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:layout_width="5dp"
+            android:layout_marginVertical="100dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            />
+
+        <View
+            android:id="@+id/vr"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:layout_width="5dp"
+            android:layout_marginVertical="100dp"
+            android:visibility="invisible"
+            />
+
+        <View
+            android:id="@+id/vl"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:layout_width="5dp"
+            android:layout_marginVertical="100dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"
+            />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:id="@+id/parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/playerTurn"
+                android:textColor="@color/black"
+                android:layout_marginBottom="20dp"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:text="Player X turn"/>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="5dp"
+                        android:id="@+id/btn1"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights,Suspicious0dp"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="5dp"
+                        android:id="@+id/btn2"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_weight="1"
+                        tools:ignore="Suspicious0dp"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="5dp"
+                        android:id="@+id/btn3"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_weight="1"
+                        tools:ignore="Suspicious0dp"
+                        />
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/ht"
+                    android:layout_height="5dp"
+                    android:background="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:visibility="invisible"
+                    />
+
+
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textSize="40sp"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"
+                    android:id="@+id/btn4"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights,Suspicious0dp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textSize="40sp"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"
+                    android:id="@+id/btn5"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_weight="1"
+                    tools:ignore="Suspicious0dp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textSize="40sp"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"
+                    android:id="@+id/btn6"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_weight="1"
+                    tools:ignore="Suspicious0dp"
+                    />
+
+
+
+
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="5dp"
+                        android:id="@+id/btn7"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights,Suspicious0dp"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="5dp"
+                        android:id="@+id/btn8"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_weight="1"
+                        tools:ignore="Suspicious0dp"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="5dp"
+                        android:id="@+id/btn9"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_weight="1"
+                        tools:ignore="Suspicious0dp"
+                        />
+
+
+
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/hb"
+                    android:layout_height="5dp"
+                    android:background="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:visibility="invisible"
+                    />
+
+
+
+
+            </FrameLayout>
+
+
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:textSize="40sp"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="5dp"
-                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/reset"
+                android:layout_marginTop="20dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_weight="1"
-                tools:ignore="NestedWeights,Suspicious0dp"
+                android:layout_gravity="center"
+                android:text="Reset"
+                android:textAllCaps="false"
                 />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:textSize="40sp"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="5dp"
-                android:id="@+id/btn2"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_weight="1"
-                tools:ignore="Suspicious0dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:textSize="40sp"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="5dp"
-                android:id="@+id/btn3"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_weight="1"
-                tools:ignore="Suspicious0dp"
-                />
-
-
-
 
 
 
@@ -109,159 +266,12 @@
         </LinearLayout>
 
 
-        <View
-            android:id="@+id/ht"
-            android:layout_height="5dp"
-            android:background="@android:color/black"
-            android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:visibility="invisible"
-            />
+
+
+    </RelativeLayout>
 
 
 
-    </FrameLayout>
+</layout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textSize="40sp"
-            android:textColor="@color/black"
-            android:layout_marginHorizontal="5dp"
-            android:id="@+id/btn4"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_weight="1"
-            tools:ignore="NestedWeights,Suspicious0dp"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textSize="40sp"
-            android:textColor="@color/black"
-            android:layout_marginHorizontal="5dp"
-            android:id="@+id/btn5"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_weight="1"
-            tools:ignore="Suspicious0dp"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textSize="40sp"
-            android:textColor="@color/black"
-            android:layout_marginHorizontal="5dp"
-            android:id="@+id/btn6"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_weight="1"
-            tools:ignore="Suspicious0dp"
-            />
-
-
-
-
-
-    </LinearLayout>
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="5dp">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:textSize="40sp"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="5dp"
-                android:id="@+id/btn7"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_weight="1"
-                tools:ignore="NestedWeights,Suspicious0dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:textSize="40sp"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="5dp"
-                android:id="@+id/btn8"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_weight="1"
-                tools:ignore="Suspicious0dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:textSize="40sp"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="5dp"
-                android:id="@+id/btn9"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_weight="1"
-                tools:ignore="Suspicious0dp"
-                />
-
-
-
-
-
-        </LinearLayout>
-
-        <View
-            android:id="@+id/hb"
-            android:layout_height="5dp"
-            android:background="@android:color/black"
-            android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:visibility="invisible"
-            />
-
-
-
-
-    </FrameLayout>
-
-
-
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/reset"
-        android:layout_marginTop="20dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_gravity="center"
-        android:text="Reset"
-        android:textAllCaps="false"
-        />
-
-
-
-
-</LinearLayout>
-
-
-
-
-</RelativeLayout>
